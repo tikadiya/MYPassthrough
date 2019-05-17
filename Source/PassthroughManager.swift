@@ -272,16 +272,16 @@ open class PassthroughManager {
         
         switch labelDescriptor.position {
         case .top:
-            y = overlayRect.origin.y - label.frame.height - labelDescriptor.margin
+            y = overlayRect.origin.y - label.frame.height - labelDescriptor.margin - labelDescriptor.space
             
             if y < topOffset {
-                y = overlayRect.origin.y + overlayRect.height + labelDescriptor.margin
+                y = overlayRect.origin.y + overlayRect.height + labelDescriptor.margin - labelDescriptor.space
             }
         case .bottom:
-            y = overlayRect.origin.y + overlayRect.height + labelDescriptor.margin
+            y = overlayRect.origin.y + overlayRect.height + labelDescriptor.margin + labelDescriptor.space
             let maxY = y + label.frame.height + bottomOffset
             if maxY > bounds.height {
-                y = overlayRect.origin.y - label.frame.height - labelDescriptor.margin
+                y = overlayRect.origin.y - label.frame.height - labelDescriptor.margin + labelDescriptor.space
             }
         case .right:
             y = overlayRect.origin.y + overlayRect.height / 2 - label.frame.height / 2
