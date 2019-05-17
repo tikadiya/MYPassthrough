@@ -239,7 +239,7 @@ open class Descriptor {
 open class LabelDescriptor: Descriptor {
     public var position: LabelPosition = .bottom
     public var margin: CGFloat = 20
-    public var space: CGFloat = 0
+     public var spaces: CGFloat = 0
     
     public override init(for text: String) {
         super.init(for: text)
